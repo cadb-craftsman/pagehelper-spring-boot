@@ -48,6 +48,12 @@ public class PageHelperStandardProperties {
     private String countSqlParser;
     private String orderBySqlParser;
     private String sqlServerSqlParser;
+    private Boolean debug;
+    private String countSuffix;
+    private String countMsIdGen;
+    private String msCountCache;
+    private String aggregateFunctions;
+    private Integer asyncCountParallelism;
 
     @Autowired
     public PageHelperStandardProperties(PageHelperProperties properties) {
@@ -290,5 +296,59 @@ public class PageHelperStandardProperties {
     public void setSqlServerSqlParser(String sqlServerSqlParser) {
         this.sqlServerSqlParser = sqlServerSqlParser;
         Optional.ofNullable(sqlServerSqlParser).ifPresent(v -> properties.setProperty("sqlServerSqlParser", v));
+    }
+
+    public Boolean getDebug() {
+        return debug;
+    }
+
+    public void setDebug(Boolean debug) {
+        this.debug = debug;
+        Optional.ofNullable(debug).ifPresent(v -> properties.setProperty("debug", v.toString()));
+    }
+
+    public String getCountSuffix() {
+        return countSuffix;
+    }
+
+    public void setCountSuffix(String countSuffix) {
+        this.countSuffix = countSuffix;
+        Optional.ofNullable(countSuffix).ifPresent(v -> properties.setProperty("countSuffix", v));
+    }
+
+    public String getCountMsIdGen() {
+        return countMsIdGen;
+    }
+
+    public void setCountMsIdGen(String countMsIdGen) {
+        this.countMsIdGen = countMsIdGen;
+        Optional.ofNullable(countMsIdGen).ifPresent(v -> properties.setProperty("countMsIdGen", v));
+    }
+
+    public String getMsCountCache() {
+        return msCountCache;
+    }
+
+    public void setMsCountCache(String msCountCache) {
+        this.msCountCache = msCountCache;
+        Optional.ofNullable(msCountCache).ifPresent(v -> properties.setProperty("msCountCache", v));
+    }
+
+    public String getAggregateFunctions() {
+        return aggregateFunctions;
+    }
+
+    public void setAggregateFunctions(String aggregateFunctions) {
+        this.aggregateFunctions = aggregateFunctions;
+        Optional.ofNullable(aggregateFunctions).ifPresent(v -> properties.setProperty("aggregateFunctions", v));
+    }
+
+    public Integer getAsyncCountParallelism() {
+        return asyncCountParallelism;
+    }
+
+    public void setAsyncCountParallelism(Integer asyncCountParallelism) {
+        this.asyncCountParallelism = asyncCountParallelism;
+        Optional.ofNullable(asyncCountParallelism).ifPresent(v -> properties.setProperty("asyncCountParallelism", v.toString()));
     }
 }
