@@ -63,7 +63,7 @@
     </modules>
 
     <properties>
-        <revision>3.4.0-SNAPSHOT</revision>
+        <revision>3.4.X-SNAPSHOT</revision>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
